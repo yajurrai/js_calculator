@@ -2,8 +2,7 @@ import { Button } from "./lib/Button.js";
 import { Calculate } from "./lib/Calculate.js";
 
 
-
-
+// Some Vars
 let numbersWrapper: any;
 let result: any;
 let previousElementContainer: any;
@@ -27,17 +26,21 @@ result = document.querySelector('#result') as HTMLSelectElement;
 previousElementContainer = document.querySelector('#previousElement') as HTMLSelectElement;
 currentNumberContainer = document.querySelector('#currentNumber') as HTMLSelectElement;
 
-// Loop to create number buttons
-for (let i = 0; i < 10; i++) {
-  numberButton = new Button('calc-number', null,  JSON.stringify(i));
+// Function to create number buttons
+function createBoard() {
+  // Loopy Loop
+  for (let i = 0; i < 10; i++) {
+    numberButton = new Button('calc-number', null,  JSON.stringify(i));
 
-  numberButton.addEventListener('click', () => {
-    currentNumberContainer.append(i);
-  });
+    numberButton.addEventListener('click', () => {
+      currentNumberContainer.append(i);
+    });
 
-  numbersWrapper.append(numberButton);
+    numbersWrapper.append(numberButton);
+  }
 }
 
+createBoard();
 
 
 // Init other buttons and add them to their container
@@ -108,6 +111,9 @@ resultButton.addEventListener('click', () => {
     case '÷':
       console.log(calculator.divideNumbers());
       currentNumberContainer.innerHTML = calculator.divideNumbers();
+      break;
+    default:
+      currentNumberContainer.innerHTML = "Invalid input :(";
       break;
   }
 
