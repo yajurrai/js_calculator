@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Palette+Mosaic&display=swap');
+
+:root {
+  --dark-color: #333a40;
+  --light-color: #ffffff;
+  --shadow: 7px 7px 10px rgba(0, 0, 0,0.7);
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: var(--dark-color);
+  overflow-y: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 95vh;
+}
+
+#calculator {
+  background: var(--dark-color);
+  box-shadow: var(--shadow);
+}
+
+
+.logo {
+  text-align: center;
+  text-shadow: var(--shadow);
+  color: var(--light-color);
+  margin-top: 1rem;
+  letter-spacing: 0.6rem;
+}
+
+#numbers-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(5, 100px);
+  grid-gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+
+button {
+  color: var(--light-color);
+  height: 100px;
+  background: var(--dark-color);
+  font-size: 1.4rem;
+}
+
+button:hover {
+  transition: all 0.4s;
+  transform: scale(1.06);
+  background: var(--light-color);
+  box-shadow: var(--shadow);
+  opacity: 0.8;
+  color: var(--dark-color);
+}
+
+#previousElement {
+  font-size: 1.5rem;
+  color: #ccc;
+}
+
+#currentNumber {
+  font-size: 2.5rem;
+}
+
+.fa-calculator {
+  margin-right: 1rem;
+}
+
+.inner {
+  margin-left: 1rem;
+}
+
+.clearAllButton {
+  grid-column: 1/4;
+  grid-row: 1/2;
+}
+
+.resultButton {
+  grid-column: 3/5;
+}
+
+#result {
+  display: flex;
+  flex-direction: column;
+}
+
+
+#output {
+  height: 80px;
+  font-size: 2.5rem;
+  display: flex;
+  background: var(--dark-color);
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 15px;
+}
+
+footer {
+  margin-top: 3rem;
+}
